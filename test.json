@@ -1,0 +1,51 @@
+{
+  "created_at": "2016-06-15T03:27:58.349148Z",
+  "id": "51913698420948433744230128530920648960",
+  "status": "Production",
+  "in_maintenance_mode": false,
+  "launchpad_display": true,
+  "name": "Daily Reports",
+  "url": "https://cdn.dev.spsc.io/web/daily-reports/ui/50/index.html",
+  "description": "",
+  "namespace": "daily-reports",
+  "language_list": ["en-US"],
+  "version": "50",
+  "is_archived": false,
+  "is_service": false,
+  "is_public": false,
+  "logo": "{\"type\":\"font\",\"name\":\"fa-send-o\",\"color\":{\"fg\":\"orange\"}}",
+  "slug_archive": "daily-reports",
+  "language_version": "",
+  "maintenance_url": "",
+  "slug": "daily-reports",
+  "permissions": [
+    {
+      "namespace": "daily-reports",
+      "name": "admin",
+      "display_name": "Administrator",
+      "description": "Daily Reports Administrator Role"
+    },
+    {
+      "namespace": "daily-reports",
+      "name": "user",
+      "display_name": "Daily Reports User",
+      "description": "Daily Reports User"
+    }
+  ],
+  "publisher_org_id": "209098808305562446811265341033453015703",
+  "publisher_user_id": "215143928735374797721866624229587025682",
+  "roles": [
+    {
+      "description": "Daily Reports Administrator Role",
+      "display_name": "Administrator",
+      "name": "admin",
+      "namespace": "daily-reports"
+    },
+    {
+      "description": "Daily Reports User",
+      "display_name": "Daily Reports User",
+      "name": "user",
+      "namespace": "daily-reports"
+    }],
+  "updated_at": "2017-03-23T15:04:36.288080Z"
+}

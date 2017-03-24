@@ -1,0 +1,37 @@
+{
+  "created_at": "2017-02-15T17:00:30.111283Z",
+  "id": "string",
+  "status": "string",
+  "in_maintenance_mode": true,
+  "launchpad_display": true,
+  "name": "string",
+  "url": "string",
+  "description": "string",
+  "namespace": "string",
+  "language_list": ["string"],
+  "version": "string",
+  "is_archived": true,
+  "is_service": true,
+  "is_public": true,
+  "logo": "{'type': 'font', 'name': 'fa-wrench', 'color': {'fg': 'emerald'}}",
+  "slug_archive": "string",
+  "language_version": "string",
+  "maintenance_url": "string",
+  "slug": "string",
+  "permissions": [
+    {
+      "namespace": "string",
+      "name": "string",
+      "display_name": "string",
+      "description": "string"
+    }],
+  "publisher_org_id": "string",
+  "publisher_user_id": "string",
+  "roles": [{
+    "description": "string",
+    "display_name": "string",
+    "name": "string",
+    "namespace": "string"
+  }],
+  "updated_at": "2017-02-15T17:00:30.111283Z"
+}
