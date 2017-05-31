@@ -35,12 +35,7 @@ def main():
     }
     url = "https://dev.id.spsc.io/identity/" + f"v2/applications/{data['id']}/"
     appData = requests.get(url, headers=headers)
-    print(appData)
     appData = appData.json()
-    print(appData['created_at'])
-
-    for key in appData:
-        print(key + ": " + str(appData[key]))
 
     version = 59
     payload = {
@@ -74,7 +69,5 @@ def main():
     print(f"WITH DATA: {json.dumps(payload)}")
     print(f"WITH HEADERS: {headers}")
     r = requests.put(url, data=json.dumps(payload), headers=headers)
-
-    print(r.json())
 
 main()
