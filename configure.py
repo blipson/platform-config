@@ -3,6 +3,7 @@ import json
 import getpass
 import datetime
 import time
+import os
 
 url = f"https://dev.id.spsc.io/identity/"
 
@@ -37,7 +38,7 @@ def main():
     appData = requests.get(url, headers=headers)
     appData = appData.json()
 
-    version = 59
+    version = os.environ['BUILD_NUMBER']
     payload = {
         'created_at': appData['created_at'],
         'id': appData['id'],
@@ -69,5 +70,6 @@ def main():
     print(f"WITH DATA: {json.dumps(payload)}")
     print(f"WITH HEADERS: {headers}")
     r = requests.put(url, data=json.dumps(payload), headers=headers)
+
 
 main()
