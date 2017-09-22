@@ -1,15 +1,10 @@
 {
-    "dev-id": "<DEVID>",
-    "test-id": "<TESTID>",
-    "stage-id": "<STAGEID>",
-    "prod-id": "<PRODID>",
 	"name": "Bens Test App",
-	"namespace": "bens-test12",
+	"namespace": "bens-test14",
 	"permissions": [{
 		"internal": true,
 		"name": "test-role",
 		"display_name": "test-role",
 		"description": "a test role"
-	}],
-	"url": "https://cdn.<ENVIRONMENT>.spsc.io/web/xref/ui/<VERSION>/index.html"
+	}]
 }
