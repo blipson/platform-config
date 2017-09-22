@@ -1,5 +1,8 @@
 # PyCharm project files
 .idea/
 
+# PyCache
+__pycache__/
+
 # Virtual Environment
 platform-config-venv/
