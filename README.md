@@ -2,6 +2,10 @@
 A Python command line utility for deploying front end applications to Commerce Platform.
 
 # Setup
+I recommend setting up a **[virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/)** for installing your python dependencies.
+```
+pip3 install -r requirements.pip
+```
 Change the bdp.json file to look like the following example:
 ```
 {
