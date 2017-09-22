@@ -42,12 +42,16 @@ def deploy():
     else:
         url = f"https://{env}.id.spsc.io/identity/v2/applications?name={data['name']}"
         create_url = f"https://{env}.id.spsc.io/identity/v2/applications/"
-    print(f"---------------------------------------URL---------------------------------------\n{url}")
-    appData = requests.get(url, headers=headers).json()
-    print(f"---------------------------------------RESPONSE---------------------------------------\n{appData}")
+    print(f"Checking for an existing app with the name {data['name']}...")
+    try:
+        appData = requests.get(url, headers=headers).json()
+    except Exception as e:
+        print(f"Check for existing app failed with exception: {e}")
+
     if appData["count"] == 1:
-        put_url = f"https://{env}.id.spsc.io/identity/v2/applications/{appData['results'][0]['id']}/"
         appData = appData["results"][0]
+        print(f"App with name {data['name']} found at the ID {appData['id']}")
+        put_url = f"https://{env}.id.spsc.io/identity/v2/applications/{appData['id']}/"
         payload = {
             "created_at": appData["created_at"],
             "id": appData["id"],
@@ -74,10 +78,12 @@ def deploy():
             "roles": appData["roles"],
             "updated_at": datetime.datetime.fromtimestamp(time.time()).strftime("%Y-%m-%dT%H:%M:%SZ")
         }
-        print(f"---------------------------------------URL---------------------------------------\n{url}")
-        print(f"---------------------------------------DATA---------------------------------------\n{json.dumps(payload)}")
-        r = requests.put(put_url, data=json.dumps(payload), headers=headers).text
-        print(f"---------------------------------------RESPONSE---------------------------------------\n{r}")
+        print(f"Updating app at ID {appData['id']}...")
+        try:
+            r = requests.put(put_url, data=json.dumps(payload), headers=headers).text
+        except Exception as e:
+            print(f"Update failed with exception: {e}")
+        print("Update successful!")
     elif appData["count"] == 0:
         if "status" not in data:
             data["status"] = "Production"
@@ -95,10 +101,11 @@ def deploy():
             "version": data["version"],
             "url": f"https://cdn.dev.spsc.io/{data['unit']}/{data['product']}/{data['subproduct']}/{version}/index.html"
         }
-        print(f"---------------------------------------URL---------------------------------------\n{url}")
-        print(f"---------------------------------------DATA---------------------------------------\n{json.dumps(payload)}")
-        r = requests.post(create_url, data=json.dumps(payload), headers=headers).text
-        print(f"---------------------------------------RESPONSE---------------------------------------\n{r}")
-
+        print("No application found with that name, creating a new one...")
+        try:
+            r = requests.post(create_url, data=json.dumps(payload), headers=headers).text
+        except Exception as e:
+            print(f"Create failed with exception: {e}")
+        print("Create successful!")
 
 deploy()
