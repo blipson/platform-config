@@ -55,7 +55,7 @@ def deploy():
             "in_maintenance_mode": appData["in_maintenance_mode"],
             "launchpad_display": appData["launchpad_display"],
             "name": appData["name"],
-            "url": f"https://cdn.dev.spsc.io/web/xref/ui/{version}/index.html",
+            "url": f"https://cdn.dev.spsc.io/{data['unit']}/{data['product']}/{data['subproduct']}/{version}/index.html",
             "description": appData["description"],
             "namespace": appData["namespace"],
             "language_list": appData["language_list"],
@@ -93,7 +93,7 @@ def deploy():
             "permissions": data["permissions"],
             "status": data["status"],
             "version": data["version"],
-            "url": f"https://cdn.dev.spsc.io/web/xref/ui/{version}/index.html"
+            "url": f"https://cdn.dev.spsc.io/{data['unit']}/{data['product']}/{data['subproduct']}/{version}/index.html"
         }
         print(f"---------------------------------------URL---------------------------------------\n{url}")
         print(f"---------------------------------------DATA---------------------------------------\n{json.dumps(payload)}")

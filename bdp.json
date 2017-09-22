@@ -6,5 +6,8 @@
 		"name": "test-role",
 		"display_name": "test-role",
 		"description": "a test role"
-	}]
+	}],
+	"unit": "web",
+	"product": "xref",
+	"subproduct": "ui"
 }
