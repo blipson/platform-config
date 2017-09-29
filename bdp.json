@@ -1,11 +1,16 @@
 {
-	"name": "Bens Test App",
-	"namespace": "bens-test14",
+	"name": "XREFs",
+	"namespace": "xref-ui",
 	"permissions": [{
 		"internal": true,
-		"name": "test-role",
-		"display_name": "test-role",
-		"description": "a test role"
+		"name": "user",
+		"display_name": "XREFs User",
+		"description": "XREFs User"
+	}, {
+	    "internal": true,
+	    "name": "delete",
+	    "display_name": "XREF Deletion",
+	    "description": "XREF Deletion"
 	}],
 	"unit": "web",
 	"product": "xref",
